@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 
-// Action generators - functions that return action objects, only describe wjat happened
+// Action generators - functions that return action objects, only describe what happened
 
 // const incrementCount = (payload = {}) => {
 //     return {
