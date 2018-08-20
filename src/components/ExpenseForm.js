@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
-
+import { parseCIDR } from 'ipaddr.js';
 
 export default class ExpenseForm extends React.Component {
     state = {
@@ -48,7 +48,12 @@ export default class ExpenseForm extends React.Component {
             this.setState(() => ({ error: "Please provide description and amount."}));
         } else {
             this.setState(() => ({ error: ''}));
-            console.log("submitted!");
+            this.props.onSubmit({
+                description: this.state.description,
+                amount: parseFloat(this.state.amount, 10) * 100,
+                createdAt: this.state.createdAt.valueOf(),
+                note: this.state.note
+            });
         }
     }
 
