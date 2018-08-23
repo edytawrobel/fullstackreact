@@ -1,3 +1,5 @@
+// reducers describe how rhe application changes in response to the actions
+
 //Filters reducer
 import moment from 'moment';
 
